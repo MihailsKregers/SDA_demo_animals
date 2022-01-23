@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal edit form</title>
+</head>
+<body>
+
+<form method="post" th:action="@{/postAnimal}" th:object="${animal}">
+
+    <label>Name:</label>
+    <input th:field="*{name}" th:value="*{name}"><br>
+    <p th:each="err : ${#fields.errors('name')}" th:text="${err}"></p>
+
+    <label>Color:</label>
+    <input th:field="*{color}" th:value="*{color}"><br>
+    <p th:each="err : ${#fields.errors('color')}" th:text="${err}"></p>
+
+    <label>Age:</label>
+    <input th:field="*{age}" th:value="*{age}"><br>
+    <p th:each="err : ${#fields.errors('age')}" th:text="${err}"></p>
+
+    <label>Gender:</label>
+    <input th:field="*{gender}" th:value="*{gender}"><br>
+    <p th:each="err : ${#fields.errors('gender')}" th:text="${err}"></p>
+
+    <label>Breed:</label>
+    <input th:field="*{breed}"  th:value="*{breed}"><br>
+    <p th:each="err : ${#fields.errors('breed')}" th:text="${err}"></p>
+
+    <label>Kind:</label>
+    <input th:field="*{kind}" th:value="*{kind}"><br>
+    <p th:each="err : ${#fields.errors('kind')}" th:text="${err}"></p>
+
+    <input type="submit">
+
+</form>
+</body>
+</html>

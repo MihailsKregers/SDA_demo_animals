@@ -1,0 +1,22 @@
+1. Kādus datus glabājam?
+Objekts "dzīvnieks", lauki:
+	1. Vārds - teksta rinda - 
+nav tukšs, satur alfabeta burtus vai simbolus -, ', sakās ar alfabeta burtu, beidzas ar alfabeta burtu
+	2. Krāsa - teksta rinda -
+nav tukšs, sastāv no alfabeta burtiem
+	3. Vecums - vesels skaitlis -
+range 0-100
+	4. Dzimums - burts -
+M/F/N
+	5. Suga - teksta rinda -
+nav tukšs, sastāv no alfabeta burtiem
+	6. Šķirne - teksta rinda
+nav tukšs, sastāv no alfabeta burtiem vai simboliem '-', ' ', sakās ar alfabeta burtu, beidzas ar alfabeta burtu
+
+2. Darbības:
+	1. Saglābāt dzīvnieku - editAnimal, /postAnimal
+	2. Izvadīt dzīvnieka datus - showAnimal, /showAnimal/{id}
+	3. Izvadīt visu dzīvnieku datus - showAnimalList, /showAllAnimals
+	4. Izvadīt dzīvniekus vecākus par x - showAnimalList, /showAnimalsOlder/{x}
+	5. Izvadīt dzīvniekus pēc sugas - showAnimalList, /showAnimalsByKind/{kind}
+	6. Rediģēt dzīvnieku - editAnimal, /updateAnimal/{id}
