@@ -32,6 +32,8 @@
     <input th:field="*{kind}" th:value="*{kind}"><br>
     <p th:each="err : ${#fields.errors('kind')}" th:text="${err}"></p>
 
+    <input type="hidden" th:field="*{id}" th:value="*{id}"/>
+
     <input type="submit">
 
 </form>

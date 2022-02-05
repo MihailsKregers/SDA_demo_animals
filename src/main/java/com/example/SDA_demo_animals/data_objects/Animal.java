@@ -32,7 +32,7 @@ public class Animal {
     private String name;
 
     @NotBlank(message = "Color should be not blank!")
-    @Pattern(regexp = "[A-Za-z]+", message = "Color should cpnsist only of alphabet characters!")
+    @Pattern(regexp = "[A-Za-z]+", message = "Color should consist only of alphabet characters!")
     private String color;
 
     @NotNull(message = "Age is mandatory!")
@@ -48,7 +48,7 @@ public class Animal {
     private String breed;
 
     @NotBlank(message = "Kind should be not blank!")
-    @Pattern(regexp = "[A-Za-z]+", message = "Kind should cpnsist only of alphabet characters!")
+    @Pattern(regexp = "[A-Za-z]+", message = "Kind should consist only of alphabet characters!")
     private String kind;
 
     public Animal(String name, String color, Integer age, String gender, String breed, String kind) {
@@ -75,6 +75,10 @@ public class Animal {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

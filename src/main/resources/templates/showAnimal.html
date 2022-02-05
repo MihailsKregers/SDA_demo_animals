@@ -2,9 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Animal view</title>
 </head>
 <body>
+<label>Name:</label>
+<p th:text="${animal.name}"></p>
+
+<label>Color:</label>
+<p th:text="${animal.color}"></p>
+
+<label>Age:</label>
+<p th:text="${animal.age}"></p>
+
+<label>Gender:</label>
+<p th:text="${animal.gender}"></p>
+
+<label>Breed:</label>
+<p th:text="${animal.breed}"></p>
+
+<label>Kind:</label>
+<p th:text="${animal.kind}"></p>
 
 </body>
 </html>

@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>All animal</title>
 </head>
 <body>
-
+<ul>
+    <li th:each="animal : ${animals}">
+        <ul>
+            <li th:text="'Name: ' + ${animal.name}"></li>
+            <li th:text="'Color: ' + ${animal.color}"></li>
+            <li th:text="'Age: ' + ${animal.age}"></li>
+            <li th:text="'Gender: ' + ${animal.gender}"></li>
+            <li th:text="'Breed: ' + ${animal.breed}"></li>
+            <li th:text="'Kind: ' + ${animal.kind}"></li>
+            <li><a th:href="@{~/updateAnimal/__${animal.id}__}">Atjaunot</a></li>
+        </ul>
+    </li>
+</ul>
 </body>
 </html>

@@ -7,9 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.Collection;
+import java.util.List;
 
 @Controller
 public class AnimalController {
@@ -36,5 +39,40 @@ public class AnimalController {
         }
         animalRepository.save(animal);
         return "redirect:/showAnimal/" + animal.getId();
+    }
+
+    @GetMapping(value = "/showAnimal/{id}")
+    public String showAnimal(@PathVariable("id") Long id, Model model) {
+        Animal animal = animalRepository.findById(id).get();
+        model.addAttribute("animal", animal);
+        return "showAnimal";
+    }
+
+    @GetMapping(value = "/showAnimals")
+    public String showAnimals(Model model) {
+        Iterable<Animal> animals = animalRepository.findAll();
+        model.addAttribute("animals", animals);
+        return "showAnimalList";
+    }
+
+    @GetMapping(value = "/showAnimalsOlder/{x}")
+    public String showAnimalsOlder(@PathVariable("x") Integer x, Model model) {
+        List<Animal> animals = animalRepository.findByAgeGreaterThan(x);
+        model.addAttribute("animals", animals);
+        return "showAnimalList";
+    }
+
+    @GetMapping(value = "/showAnimalsByKind/{kind}")
+    public String showAnimalsByKind(@PathVariable("kind") String kind, Model model) {
+        List<Animal> animals = animalRepository.findByKind(kind);
+        model.addAttribute("animals", animals);
+        return "showAnimalList";
+    }
+
+    @GetMapping(value = "/updateAnimal/{id}")
+    public String updateAnimal(@PathVariable("id") Long id, Model model) {
+        Animal animal = animalRepository.findById(id).get();
+        model.addAttribute("animal", animal);
+        return "editAnimal";
     }
 }
