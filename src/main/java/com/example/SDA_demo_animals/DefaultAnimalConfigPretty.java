@@ -4,10 +4,12 @@ import com.example.SDA_demo_animals.data_objects.Animal;
 import com.example.SDA_demo_animals.repositories.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+@Profile("thymeleaf")
 @Component
 @ConfigurationProperties(prefix = "sda.demo.animals.pretty")
 public class DefaultAnimalConfigPretty {

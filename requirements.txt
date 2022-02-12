@@ -20,3 +20,5 @@ nav tukšs, sastāv no alfabeta burtiem vai simboliem '-', ' ', sakās ar alfabe
 	4. Izvadīt dzīvniekus vecākus par x - showAnimalList, /showAnimalsOlder/{x}
 	5. Izvadīt dzīvniekus pēc sugas - showAnimalList, /showAnimalsByKind/{kind}
 	6. Rediģēt dzīvnieku - editAnimal, /updateAnimal/{id}
+
+	REST: /rest/*

@@ -3,6 +3,8 @@ package com.example.SDA_demo_animals.controllers;
 import com.example.SDA_demo_animals.data_objects.Animal;
 import com.example.SDA_demo_animals.repositories.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +16,7 @@ import javax.validation.Valid;
 import java.util.Collection;
 import java.util.List;
 
+@Profile("thymeleaf")
 @Controller
 public class AnimalController {
 
@@ -24,6 +27,10 @@ public class AnimalController {
         this.animalRepository = animalRepository;
     }
 
+   /* @GetMapping(value = "/")
+    public String mainPage(Model model) {
+        return showAnimals(model);
+    }*/
 
     @GetMapping(value = "/postAnimal")
     public String postAnimal(Model model) {
@@ -48,7 +55,7 @@ public class AnimalController {
         return "showAnimal";
     }
 
-    @GetMapping(value = "/showAnimals")
+    @GetMapping(value = {"/showAnimals", "/"})
     public String showAnimals(Model model) {
         Iterable<Animal> animals = animalRepository.findAll();
         model.addAttribute("animals", animals);
