@@ -3,7 +3,8 @@ package com.example.SDA_demo_animals.config;
 public enum UserRoles {
     ADMIN("ADMIN"),
     USER("USER"),
-    JSON_USER("JSON_USER");
+    JSON_USER("JSON_USER"),
+    DEFAULT_ROLE("DEFAULT_ROLE");
 
     private final static String prefix = "ROLE_";
 

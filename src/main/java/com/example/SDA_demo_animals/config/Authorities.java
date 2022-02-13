@@ -1,7 +1,8 @@
 package com.example.SDA_demo_animals.config;
 
 public enum Authorities {
-    SHOW_MAIN_PAGE("SHOW_MAIN_PAGE");
+    SHOW_MAIN_PAGE("SHOW_MAIN_PAGE"),
+    REGISTER_USERS("REGISTER_USERS");
 
     private String key;
 
